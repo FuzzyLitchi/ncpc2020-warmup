@@ -170,10 +170,8 @@ fn run_test_cases() -> impl Iterator<Item=Result<(), Crash>> {
                             (*x, *y)
                         };
                         for (i, robot) in robots.iter().enumerate() {
-                            if i != robot_i {
-                                if x == robot.position.0 && y == robot.position.0 {
-                                    return Err(Crash::Robot(robot_i, i));
-                                }
+                            if i != robot_i && x == robot.position.0 && y == robot.position.1 {
+                                return Err(Crash::Robot(robot_i, i));
                             }
                         }
                         if x < 1 || y < 1 || x > width || y > height {
