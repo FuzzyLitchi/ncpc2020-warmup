@@ -11,6 +11,7 @@ fn main() {
         .split_whitespace()
         .map(|s| s.parse::<u32>().unwrap())
         .collect::<Vec<u32>>();
+    assert_eq!(rates.len(), 24);
 
     let mut data: Vec<(String, DateTime, String, u32)> = Vec::new();
 
